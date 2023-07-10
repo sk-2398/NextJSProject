@@ -1,6 +1,6 @@
 "use client";
 import { ITask } from "@/types/tasks"
-import { FaRegEdit, FaRegTrashAlt } from "react-icons/Fa";
+// import { FaRegEdit, FaRegTrashAlt } from "react-icons/Fa";
 import React, { FormEventHandler, useState } from "react"
 import Modal from "./Modal";
 import { useRouter } from "next/navigation";
@@ -47,7 +47,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             <td>{task.description==""?"-":task.description}</td>
             <td>{task.status}</td>
             <td className="flex gap-10">
-                <FaRegEdit cursor='pointer' onClick={() => setModalOpenEdit(true)} className="text-blue-300" size={20} />
+                <button   onClick={() => setModalOpenEdit(true)} className="btn"  >Edit</button>
                 <Modal modalOpen={modalOpenEdit} setModalOpen={setModalOpenEdit}>
                     <div className="modal-action">
                         <form onSubmit={updateTask} className="w-full" >
@@ -82,7 +82,7 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                         </form>
                     </div>
                 </Modal>
-                <FaRegTrashAlt cursor='pointer' onClick={() => setModalOpenDelete(true)} className="text-red-500" size={20} />
+                <button className="btn btn-danger" onClick={() => setModalOpenDelete(true)}   >Delete</button>
                 <Modal modalOpen={modalOpenDelete} setModalOpen={setModalOpenDelete}>
                     <h3 className="text-lg">Confirm delete?</h3>
                     <div className="modal-action">

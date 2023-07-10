@@ -1,6 +1,6 @@
 "use client";
 import { FormEventHandler, useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+// import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
 import { addTodo } from "@/api";
 import { useRouter } from "next/navigation";
@@ -33,7 +33,7 @@ const AddTask = () => {
 
   return (
     <div>
-      <button className="btn btn-primary w-full mx-5" onClick={() => setModalOpen(true)}><AiOutlinePlus />Add new task</button>
+      <button className="btn btn-primary w-full mx-5" onClick={() => setModalOpen(true)}>Add new task</button>
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
         <div className="modal-action">
           <form onSubmit={addNewTask} className="w-full" >
